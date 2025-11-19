@@ -66,6 +66,7 @@ function Timer (){
      
     }
     function StopTimer(){
+        setElapsed(0);
         if(intervalRef.current){
             clearInterval(intervalRef.current)
             intervalRef.current = null;
@@ -77,18 +78,21 @@ function Timer (){
 
         <>
         <h1>Timer</h1>
-        <div>
+        <div className="flex">
              <input placeholder="how many seconds?" type="number" onChange={(e) => setTime(e.target.value)}/>
             <input placeholder="how many times ?" type="number" onChange={(e) => setRepeat(e.target.value)}/>
         </div>
-        
-        <div>
+
+        <div className="flex">
             <button onClick={StartTimer}>Start timer</button>
             <button onClick={StopTimer}>Stop</button>
         </div>
        
-
-        <p>{elapsed}</p>
+        <div className="circle">
+            <p className="time">{elapsed}</p>
+        </div>
+        
+        {done && <p>Hotovo</p>}
         </>
     )
 
