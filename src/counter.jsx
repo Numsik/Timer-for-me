@@ -58,6 +58,7 @@ function Timer (){
                 clearInterval(intervalRef.current);
                 setDone(true);
                 stopElapsed();
+                //tady chci napsat done 
             }
 
         }, Number(time) * 1000)
@@ -91,8 +92,8 @@ function Timer (){
         <div className="circle">
             <p className="time">{elapsed}</p>
         </div>
+        {done && <p className="done">DONE</p>}
         
-        {done && <p>Hotovo</p>}
         </>
     )
 
