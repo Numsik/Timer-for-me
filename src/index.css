@@ -41,7 +41,11 @@ button{
     border: none;
     color: white;
     background-color: #76153C;
-    border-radius: 10px;
+    border-radius: 2rem;
+    transition: background-color 500ms ease;
+}
+button:hover{
+    background-color: #460c23;
 }
 
 .time{
